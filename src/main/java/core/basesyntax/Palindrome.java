@@ -22,12 +22,9 @@ public class Palindrome {
      */
 
     public boolean isPalindrome(String text) {
-        String cleanText = text.replaceAll("[^a-zA-Z\\d]", "");
-        StringBuilder sb = new StringBuilder(cleanText);
+        StringBuilder cleanText =
+                new StringBuilder(text.replaceAll("[^a-zA-Z\\d]", "").toLowerCase());
 
-        if (cleanText.toLowerCase().equals(sb.reverse().toString().toLowerCase())) {
-            return true;
-        }
-        return false;
+        return cleanText.toString().equals(cleanText.reverse().toString());
     }
 }
